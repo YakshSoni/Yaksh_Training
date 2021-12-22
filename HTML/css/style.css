@@ -1109,6 +1109,7 @@ h4:after{
 .sp_detail{
 	width: 845px;
 	height: auto;
+	margin-left: 32px;
 }
 .sp_detail p{
 	font-size: 16px;
@@ -1140,6 +1141,73 @@ h4:after{
 	display: flex;
 	justify-content: center;
 }
+
+/*-------------------------------------------------Service History-------------------------------------*/
+.sh_export_btn{
+	height: 34px;
+	width: 70px;
+	background-color: #146371;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	border: none;
+	border-radius: 17px;
+	margin-left: 50px;
+}
+.sh_title{
+	font-size: 22px;
+	font-weight: 700;
+	color: #646464;
+	line-height: 27px;
+}
+.sh_ratesp{
+	width: 70px;
+	height: 34px;
+	background-color: #6DA9B5;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	border: none;
+	border-radius: 17px;
+}
+.sh_payment{
+	color: #1D7A8C;
+	font-size: 24px;
+	font-weight: 700;
+}
+.sh_status_completed{
+	background-color: #67B644;
+	font-size: 14px;
+	font-weight: 400;
+	color: white;
+	border: none;
+	height: 24px;
+	width: 80px;
+	justify-content: center;
+	padding: 2px 5px;
+}
+.sh_status_cancelled{
+	background-color: #FF6B6B;
+	font-size: 14px;
+	font-weight: 400;
+	color: white;
+	border: none;
+	height: 24px;
+	width: 80px;
+	justify-content: center;
+	padding: 2px 7px;
+}
+.sh_cap_border{
+	width: 40px!important;
+	height: 40px!important;
+	border: 1px solid #b0c9ce;
+	opacity: 1;
+	border-radius: 50%;
+	padding-left: 5px!important;
+	padding-top: 5px!important;
+}
+
+
 /*--------------------------------------media queries--------------------------------------------------*/
 
 @media (max-width: 768px) {
@@ -1154,6 +1222,28 @@ h4:after{
 	.sp_detail .col-md-2{
 		width: auto;
 		text-align: center;
+	}
+	.sp_detail .col-md-3{
+		width: auto;
+		padding-right: 10px;
+	}
+	.sp_detail .col-md-3 #cap{
+		display: none;
+	}
+	.sp_detail .col-md-7{
+		width: auto;
+	}
+	.sp_detail #export_end{
+		margin-left: auto;
+	}
+	.sp_detail .sh_title{
+		margin-left: 30px;
+	}
+	.sh_cap_border{
+		display: none;
+	}
+	.sp_detail .sp_details .col-sm-9{
+		width: auto;
 	}
 	.sp_detail .col-md-4{
 		width: auto;
@@ -1294,6 +1384,7 @@ h4:after{
 		width: 100%;
 		justify-content: center;
 		text-align: center;
+		margin: 0px;
 	}
 	
 }
@@ -1320,6 +1411,9 @@ h4:after{
 		width: 60px;
 		border: none;
 		font-size: 12px;
+	}
+	.sh_payment{
+		font-size: 18px;
 	}
 }
 @media screen and (max-width:1440px) {
