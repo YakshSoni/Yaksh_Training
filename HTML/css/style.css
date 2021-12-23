@@ -1206,7 +1206,38 @@ h4:after{
 	padding-left: 5px!important;
 	padding-top: 5px!important;
 }
-
+.sh_last_row{
+	font-size: 14px;
+	font-weight: 400;
+	color: #646464;
+}
+.sh_last_row_btn_border{
+	height: 38px;
+	width: 38px;
+	border: 1px solid #E1E1E1;
+	border-radius: 50%;
+}
+.sh_last_row ul{
+	list-style-type: none;
+}
+.sh_last_row ul li{
+	display: inline-block;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding-top: 6px;
+}
+.sh_last_row ul li:hover{
+	background-color: #1D7A8C;
+	color: white!important;
+}
+.sh_last_row_active_btn{
+	background-color: #1D7A8C;
+	color: white;
+}
+.rotate{
+	transform: rotate(180deg);
+}
 
 /*--------------------------------------media queries--------------------------------------------------*/
 
