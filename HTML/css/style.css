@@ -1474,6 +1474,41 @@ h4:after{
 		width: auto;
 		margin:0px 2px;
 	}
+.last_row_select{
+		height: 40px;width: 58px;border: 1px solid #D6D6D6;border-radius: 4px;
+	}
+
+
+
+.sr_last_row{
+	font-size: 14px;
+	font-weight: 400;
+	color: #646464;
+}
+
+.sr_last_row_btn_border{
+	height: 40px;
+	width: 40px;
+	border: 1px solid #E1E1E1;
+}
+.sr_last_row ul{
+	list-style-type: none;
+}
+.sr_last_row ul li{
+	display: inline-block;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding-top: 6px;
+}
+.sr_last_row ul li:hover{
+	background-color: #565656;
+	color: white!important;
+}
+.sr_last_row_active_btn{
+	background-color: #565656;
+	color: white;
+}
 /*--------------------------------------media queries--------------------------------------------------*/
 
 @media (max-width: 768px) {
@@ -1567,7 +1602,72 @@ h4:after{
 		background-color: #F4F4F4;
 	}
 }
-@media screen and (max-width: 991px) {
+
+@media screen and (max-width: 970px){
+	.accordion-faq .accordion {
+	margin-top: 48px;
+	margin-left: 40px;
+}
+
+.accordion-faq .accordion .accordion_item {
+	margin-bottom: 44px;
+	margin-left: 40px;
+}
+}
+@media (max-width: 816px){
+	.sp_detail p{
+		font-size: 12px;
+		font-weight: 700;
+		color: #646464;
+	}
+	.sp_details{
+		height: 71px;
+		border: 1px solid #E1E1E1;
+	}
+	.sp_details p{
+		font-size: 12px;
+		color: #646464;
+		font-weight: 400;
+	}
+	.sp_detail_cancel{
+		color: white;
+		background-color: #FF6B6B;
+		border-radius: 17px;
+		height: 34px;
+		width: 60px;
+		border: none;
+		font-size: 12px;
+	}
+	.sh_payment{
+		font-size: 18px;
+	}
+	.service_req_status_completed{
+			width: 60px;
+		}
+		.service_req_status_cancelled{
+			width: 60px;
+		}
+		.service_req_status_new{
+			width: 40px;
+		}
+		.service_req_status_pending{
+			width: 60px;
+		}
+		.user_mng_search{
+			height: 350px;
+			background-color: #F4F4F4;
+		}
+		.user_mng_search_form{
+			flex-wrap: wrap;
+			flex-direction: column;
+		}
+		.user_mng_search_form div{
+			width: auto;
+			margin: 5px;
+		}
+}
+
+@media (max-width: 991px) {
 	.about-nav li {
 		margin: 15px;
 	}
@@ -1589,28 +1689,6 @@ h4:after{
 	.site-footer{
 		position: sticky;
 	}
-}
-@media screen and (min-width: 992px) {
-	.pro-pane-left {
-		text-align: end;
-	}
-	.pro-pane-right {
-		text-align: start;
-	}
-}
-@media screen and (max-width: 970px){
-	.accordion-faq .accordion {
-	margin-top: 48px;
-	margin-left: 40px;
-}
-
-.accordion-faq .accordion .accordion_item {
-	margin-bottom: 44px;
-	margin-left: 40px;
-}
-}
-@media screen and  (max-width: 991px){
-
 	div ul .nav-item{
 		border: none;
 		margin: 10px auto;
@@ -1687,51 +1765,24 @@ h4:after{
 		margin-right: 0px!important;
 	}
 	.user_mng_detail .sp_detail_head_bg p{
-	font-size: 14px;
-	font-weight: 700;
-	color: #646464;
-}
-}
-@media (max-width: 816px){
-	.sp_detail p{
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 700;
 		color: #646464;
 	}
-	.sp_details{
-		height: 71px;
-		border: 1px solid #E1E1E1;
+
+}
+@media screen and (min-width: 992px) {
+	.pro-pane-left {
+		text-align: end;
 	}
-	.sp_details p{
-		font-size: 12px;
-		color: #646464;
-		font-weight: 400;
+	.pro-pane-right {
+		text-align: start;
 	}
-	.sp_detail_cancel{
-		color: white;
-		background-color: #FF6B6B;
-		border-radius: 17px;
-		height: 34px;
-		width: 60px;
-		border: none;
-		font-size: 12px;
-	}
-	.sh_payment{
-		font-size: 18px;
-	}
-	.service_req_status_completed{
-	width: 60px;
 }
-.service_req_status_cancelled{
-	width: 60px;
-}
-.service_req_status_new{
-	width: 40px;
-}
-.service_req_status_pending{
-	width: 60px;
-}
-}
+
+
+
+
 
 
 @media (max-width: 1112px){
@@ -1777,8 +1828,33 @@ h4:after{
 		text-align: center;
 		margin: 0px;
 	}
+
+
+	.service_req_detail .user_mng_search{
+			height: 450px;
+			background-color: #F4F4F4;
+		}
+		.service_req_detail .user_mng_search_form{
+			flex-wrap: wrap;
+			flex-direction: column;
+		}
+		.service_req_detail .user_mng_search_form div{
+			width: auto;
+			margin: 5px;
+
+			justify-content: center!important;
+		}
+		.service_req_detail .user_mng_search_form div div{
+			width: 40%;
+			justify-content: center!important;
+		}
+		.service_req_detail .user_mng_search_form div div div{
+			width: 100%;
+		}
 	
 }
+
+
 @media(max-width: 1300px){
 	
 	.s_req_cal,.s_req_home,.s_req_time{

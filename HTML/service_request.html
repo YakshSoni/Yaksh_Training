@@ -171,41 +171,45 @@
     				<form >
     					<div class="user_mng_search_form ">
     							<div>
-									<input type="text" name="ServiceID" class="form-control" id="serviceID" placeholder="Service ID" >	
-								</div>
+										<input type="text" name="ServiceID" class="form-control" id="serviceID" placeholder="Service ID" >	
+									</div>
     							<div>
-									<input type="text" name="Customer" class="form-control" id="Customer" placeholder="Customer" >	
-								</div>
-								<div >
-									<input type="text" name="Service Provider" class="form-control" id="Serviceprovider" placeholder="Service Provider" >		
-								</div>
-								<div>
-									<select name="status" id="status" class="form-control">
-										<option value="" disabled selected >Status</option>
-									  <option value="Active">Active</option>
-									  <option value="Inactive">Inactive</option>
-									  <option value="Active">New</option>
-									  <option value="Active">Pending</option>
-									</select>
-								</div>
-								<div class="d-flex" style="padding-left: 3px!important;">
-									<div>		
-										<div class="sd-container">
-										    <input class="form-control" type="text" name="from_date" placeholder="From Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
-										    <span class="open-button">
-										      <button type="button"><img src="asset/admin-calendar-blue.png"></button>
-										    </span>
-										</div>
+										<select class="form-control form-select">
+											<option disabled selected>Customer</option>
+										</select>
+									</div>
+									<div >
+										<select class="form-control form-select">
+											<option disabled selected>Service Provider</option>
+										</select>	
 									</div>
 									<div>
-										<div class="sd-container">
-										    <input class="form-control" type="text" name="to_date" placeholder="To Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
-										    <span class="open-button">
-										      <button type="button"><img src="asset/admin-calendar-blue.png"></button>
-										    </span>
+										<select name="status" id="status" class="form-control form-select">
+											<option value="" disabled selected >Status</option>
+										  <option value="Active">Active</option>
+										  <option value="Inactive">Inactive</option>
+										  <option value="Active">New</option>
+										  <option value="Active">Pending</option>
+										</select>
+									</div>
+									<div class="d-flex" >
+										<div>		
+											<div class="sd-container">
+											    <input class="form-control" type="text" name="from_date" placeholder="From Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+											    <span class="open-button">
+											      <button type="button"><img src="asset/admin-calendar-blue.png"></button>
+											    </span>
+											</div>
 										</div>
-									</div>	
-								</div>
+										<div>
+											<div class="sd-container">
+											    <input class="form-control" type="text" name="to_date" placeholder="To Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+											    <span class="open-button">
+											      <button type="button"><img src="asset/admin-calendar-blue.png"></button>
+											    </span>
+											</div>
+										</div>	
+									</div>
 								
 								
 								<div >
@@ -310,9 +314,109 @@
 			                  </ul>
 			            </div>
 					</div>
-
 				</div>
 
+				<div class="row sp_details pt-3">
+					<div class="col-md-2">
+						<p>323436</p>
+					</div>
+					<div class="col-md-2 ">
+						<div class="row">
+							<p><img src="asset/calendar2.png" class="s_req_cal"> <b>09/04/2018</b><br>
+							<img src="asset/layer-14.png" class="s_req_time"> 12:00 - 18:00</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<p>David Bough<br>
+							<img src="asset/layer-15.png" class="s_req_home"> Musterstrabe 5,12345 Bonn</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<div class="col-sm-3 sh_cap_border ">
+								<img src="asset/cap.png" id="cap">
+							</div>
+							<div class="col-sm-9 ">
+								<p>Lyum Watson<br>
+									<img src="asset/star1.png">
+									<img src="asset/star1.png">
+									<img src="asset/star1.png">
+									<img src="asset/star1.png">
+									<img src="asset/star2.png">
+									4
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 pt-1">
+						<div class="service_req_status_new">
+							New
+						</div>
+					</div>
+					<div class="col-md-1">
+						<div class="dropdown ">
+			                <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			                    <img src="asset/group-38.png">
+			                </a>
+			                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Edit & Reschedule</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Refund</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Cancel</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Change SP</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Escalate</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">History log</a>
+			                    </li>
+			                    <li>
+			                      	<a class="dropdown-item" href="#">Download Invoice</a>
+			                    </li>
+			                  </ul>
+			            </div>
+					</div>
+				</div>
+
+				<div class="row align-items-center sp_details sr_last_row">
+					<div class="col-md-4" >
+						<label for="no_rows">Show </label>
+						  <select name="no_rows" id="no_rows" class="last_row_select">
+						    <option value="10">10</option>
+						    <option value="50">50</option>
+						    <option value="100">100</option>
+						    <option value="200">200</option>
+						  </select>
+						 <label>Entries</label>
+					</div>
+					<div class="col-md-2">
+						
+					</div>
+					<div class="col-md-6">
+						<div class="d-inline-block pt-3">
+							<ul>
+								<li class="sr_last_row_btn_border">
+									<img src="asset/polygon-1-copy-5.png">
+								</li>
+								<li class="sr_last_row_btn_border sr_last_row_active_btn">1</li>
+								<li class="sr_last_row_btn_border">2</li>
+								<li class="sr_last_row_btn_border">3</li>
+								<li class="sr_last_row_btn_border">4</li>
+								<li class="sr_last_row_btn_border">
+									<img src="asset/polygon-1-copy-5.png" class="rotate">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				
 
 
