@@ -1387,6 +1387,9 @@ h4:after{
 	font-weight: 400;
 	text-align: left;
 }
+.user_mng .dropdown a{
+	color: #646464;
+}
 /*--------------------------------------service request------------------------------------------------*/
 .service_request_main{
 	background-color: #F4F4F4;
