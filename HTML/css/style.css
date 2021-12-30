@@ -1375,7 +1375,7 @@ h4:after{
 	margin-top: 20px;
 	width: auto;
 }
-.user_mng_footer p{
+.user_mng_footer td{
 	color: #A2A6A8;
 	font-size: 14px;
 	font-weight: 400;
@@ -1604,18 +1604,35 @@ h4:after{
 		height: 460px;
 		background-color: #F4F4F4;
 	}
+	.sr_last_row .col-md-8{
+		width: auto;
+	}
+	.sr_last_row .col-md-4{
+		text-align: center;
+	}
 }
 
 @media screen and (max-width: 970px){
 	.accordion-faq .accordion {
-	margin-top: 48px;
-	margin-left: 40px;
-}
+		margin-top: 48px;
+		margin-left: 40px;
+	}
 
-.accordion-faq .accordion .accordion_item {
-	margin-bottom: 44px;
-	margin-left: 40px;
-}
+	.accordion-faq .accordion .accordion_item {
+		margin-bottom: 44px;
+		margin-left: 40px;
+	}
+	.sr_last_row .col-md-4{
+		white-space: nowrap;
+		padding-left: 0px!important;
+	}
+	.sr_last_row .col-md-4 ul{
+
+		padding-left: 0px!important;
+	}
+	.sr_last_row .col-md-8{
+		padding-left: 30px!important;
+	}
 }
 @media (max-width: 816px){
 	.sp_detail p{
@@ -1668,6 +1685,8 @@ h4:after{
 			width: auto;
 			margin: 5px;
 		}
+
+	
 }
 
 @media (max-width: 991px) {
