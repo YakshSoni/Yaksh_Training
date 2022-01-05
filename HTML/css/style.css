@@ -33,6 +33,9 @@ h2{
 	height: 100%;
 }
 
+.navbar ul li{
+	white-space: nowrap;
+}
 .head_item{
 	font-size: 17px;
 	text-decoration: none;
@@ -167,42 +170,31 @@ h2{
 	max-width: 1090px; 
 	margin: 0 auto 35px; 
 }
-.banner-image .step-wrapper .row .col-lg-3 { 
-	text-align: center; 
-	padding: 0; 
-	position: relative; 
+#sw-2{
+	display: none;
 }
-.banner-image .step-wrapper .row .col-lg-3+.col-lg-3 .step { 
-	padding-left: 140px;
+#sw-1 .col-lg-2{
+	text-align: center;
 }
-.banner-image .step-wrapper .row .col-lg-3+.col-lg-3 .step:before { 
-	position: absolute; 
-	content: ''; 
-	top: 20px; 
-	left: 35px; 
-	width: 85px; 
-	height: 23px; 
-	background-image: url('../asset/step-arrow-1.png'); 
-	background-position: center; 
-	background-repeat: no-repeat; 
-	background-size: cover; 
+#sw-1 .col-lg-1{
+	text-align: center;
 }
-.banner-image .step-wrapper .row .col-lg-3:nth-child(odd) .step:before { 
-	background-image: url('../asset/step-arrow-1-copy.png'); 
+#sw-1 .col-lg-3{
+	text-align: center;
 }
-.banner-image .step-wrapper .row .step span { 
-	display: block; margin-bottom: 35px; 
+.step-wrapper .col-lg-2 p{
+	color: white;
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: 400;
 }
-.banner-image .step-wrapper .row .step span img { 
-	display: inline-block; 
-	max-width: 62px; 
+.step-wrapper .col-lg-3 p{
+	color: white;
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: 400;
 }
-.banner-image .step-wrapper .row .step p { 
-	color: #ffff; 
-	font-size: 20px; 
-	line-height: 1.2; 
-	margin-bottom: 0; 
-}
+
 
 
 /*End of Homepage Section */
@@ -615,6 +607,11 @@ h4:after{
 .accordion-faq {
 	max-width: 946px;
 	margin: 36px auto 60px;
+}
+
+#accordionExample{
+	display: none;
+	padding: 40px 0px;
 }
 
 .accordion-faq .nav-tabs {
@@ -1238,6 +1235,9 @@ h4:after{
 .rotate{
 	transform: rotate(180deg);
 }
+.rotate_90{
+	transform: rotate(90deg);
+}
 .rotate_270{
 	transform: rotate(270deg);
 }
@@ -1513,8 +1513,64 @@ h4:after{
 	color: white;
 }
 /*--------------------------------------media queries--------------------------------------------------*/
-
+@media (max-width: 500px){
+	.scroll-top{
+		display: none!important;
+	}
+	.message-boat{
+		display: none!important;
+	}
+}
 @media (max-width: 768px) {
+
+
+	#sw-2{
+		display: none!important;
+	}
+	#sw-1{
+		display: block!important;
+	}
+	#sw-1 .col-lg-1{
+		display: none;
+	}
+	#sw-1 .col-lg-2{
+		padding: 30px 0px;
+	}
+
+	.accordion-faq{
+		display: none!important;
+	}
+	#accordionExample{
+		display: block!important;
+	}
+	.accordion-button{
+			background-color: #F6F6F6!important;
+			color: #646464!important;
+			font-size: 24px!important;
+			font-weight: 500!important;
+		}
+		.accordion{
+			color: #646464!important;
+		}
+		.accordion .accordion-item button{
+			background-color: #1D7A8C!important;
+			color: white!important;
+			border: none;
+		}
+		.accordion .accordion .accordion_item{
+			cursor: pointer!important;
+			padding: 5px 10px;
+		}
+		.accordion .accordion-item .accordion-body .accordion-header{
+			font-size: 16px;
+			font-weight: 700;
+		}
+		.accordion .accordion-item .accordion-body .accordion .accordion-item .accordion-body p{
+			
+			font-size: 16px!important;
+			font-weight: 400!important;
+		}
+
 	div.arrow {
 		display: none;
 	}
@@ -1690,6 +1746,41 @@ h4:after{
 }
 
 @media (max-width: 991px) {
+	#sw-1{
+		display: none;
+	}
+	#sw-2{
+		display: block;
+		
+	}
+	#sw-2 .row{
+		justify-content: center!important;
+	}
+	#sw-2 .col-md-2{
+		text-align: center;
+	}
+	#sw-2 .col-md-2 p{
+		color: white;
+		padding-top: 10px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	.site-footer .footer-top .row .col-lg-2{
+		text-align: center!important;
+		padding-bottom: 20px;
+	}
+	.site-footer .footer-top .row .col-lg-2 ul{
+		padding-top: 20px;
+		justify-content: center!important;
+	}
+	.site-footer .footer-top .row .col-lg-8{
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+
+
 	.about-nav li {
 		margin: 15px;
 	}
@@ -1808,6 +1899,12 @@ h4:after{
 
 
 @media (max-width: 1112px){
+	.ctr-btn{
+		margin-top: 15px;
+	}
+	.banner-image .btn-wrapper { 
+		margin-bottom: 100px!important; 
+	}
 	.sp_main{
 		flex-direction: column;
 	}
