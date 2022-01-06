@@ -1,0 +1,128 @@
+Tables List
+
+*news letters
+
+1)Get_News_letters
+-id int (pk)
+-email varchar(60) unique
+
+*Get in touch
+
+1)get_intouch_person_details
+-git_id int (pk)
+-firstname varchar(40) notnull
+-lastname varchar(40) notnull
+-mobile_no char(10) constraint (check mobile_no not like '%[^0-9]%') 
+-email varchar(60) notnull 
+
+2)get_intouch_person_message
+-ID int (pk)
+-GIT_p_id int (fk) references get_intouch_person_details(git_id) 
+-subject varchar(30) notnull
+-message varchar(200) notnull
+
+
+*roles
+
+1)roles_name (description:1-cutomer,2-service provider,3-admin)
+-Role_id int (pk) 
+-role_name varchar(20)
+
+*customer
+
+1)customer_details
+-C_ID int (pk)
+-role int notnull (default-1) (fk) references roles(Role_ID)
+-firstname varchar(40) notnull
+-lastname varchar(40) notnull
+-email varchar(60) notnull
+-mobile char(10) notnull constraint (check mobile_no not like '%[^0-9]%') 
+-DOB DATE notnull
+-password varchar(20) notnull
+
+
+2)customer_languages
+-CL_ID int (fk)  references customer_details(C_ID)
+-language varchar(40) notnull
+
+3)customer_addresses
+-CA_ID int (fk) references customer_details(C_ID)
+-street_name varchar(80) notnull
+-house_no int notnull
+-city varchar(30) notnull
+-postal char(6) notnull constraint (check mobile_no not like '%[^0-9]%')
+
+4)customer_favourite_sp
+-cf_sp_id int (fk) references customer_details(C_ID)
+-favourite_sp_id int 
+
+5)customer_blocked_sp
+-cb_sp_id int (fk) references customer_details(C_ID)
+-blocked_sp_id int
+
+
+*service provider
+
+1)service_provider_detail
+-SP_ID int (pk)
+-role int notnull (default-2) (fk) references roles(Role_ID)
+-firstname varchar(40) notnull
+-lastname varchar(40) notnull
+-email varchar(60) notnull
+-mobile char(10) notnull constraint (check mobile_no not like '%[^0-9]%') 
+-DOB DATE notnull
+-Nationality varchar(30) 
+-Gender varchar(20) notnull
+-Avatar int (1-5) notnull
+-password varchar(20) notnull
+-street_name varchar(80) notnull
+-house_no int notnull
+-city varchar(30) notnull
+-postal char(6) notnull constraint (check mobile_no not like '%[^0-9]%')
+
+2)service_provider_ratings
+-sp_r_ID (fk) references service_provider_detail(SP_ID)
+-ratings decimal(1,2) 
+
+
+*admin
+
+1)admin_detail
+-A_ID int (pk)
+-role int notnull (default-3) (fk) references roles(Role_ID)
+-firstname varchar(40) notnull
+-lastname varchar(40) notnull
+-email varchar(60) notnull
+-password varchar(20) notnull
+
+
+*service_request
+
+1)service_schedule_details
+-service_req_id int (pk)
+-customer_ID int (fk) references cutomer_details(C_ID)
+-service_get_date DATE notnull
+-service_start_time TIME notnull ( for 24 hour format HH:mm:ss)
+-service_duration int notnull
+-extra_services int (between 1-5)
+-comments varchar(100) 
+-pet BIT notnull
+-payment_amount decimal(4,2) 
+
+2)service_accept
+-customer_ID int 
+-service_provider_ID int
+
+*transaction tables
+
+1)cutomer_service_cancel
+-service_req_id int (fk) references service_schedule_details(service_req_id)
+-reason varchar(70) notnull
+
+2)customer_to_sp_feedback
+-customer_ID int (fk) references customer_details(C_ID)
+-on time arrival int notnull  (between 1-5 stars)
+-friendly int notnull (between 1-5 stars)
+-quality of service int notnull (between 1-5 stars)
+-feedback varchar(100) 
+
