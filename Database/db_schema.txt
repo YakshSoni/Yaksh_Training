@@ -85,6 +85,11 @@ Tables List
 -ratings decimal(1,2) 
 
 
+3)sp_blocked_customer
+-spb_c_id int (fk) references service_provider_detail(SP_ID)
+-blocked_c_id int
+
+
 *admin
 
 1)admin_detail
@@ -108,6 +113,7 @@ Tables List
 -comments varchar(100) 
 -pet BIT notnull
 -payment_amount decimal(4,2) 
+-service_active_status BIT notnull
 
 2)service_accept
 -customer_ID int 
