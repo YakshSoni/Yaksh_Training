@@ -32,7 +32,19 @@ h2{
 	width: 100%;
 	height: 100%;
 }
-
+.ok-btn { 
+	position: absolute; 
+	text-decoration: none; 
+	color: #4F4F4F !important; 
+	background: #EED507; 
+	border-radius: 20px; 
+	width: 99px; 
+	height: 40px; 
+	line-height: 40px; 
+	right: 15px; 
+	top: 50%; 
+	transform: translateY(-50%); 
+}
 .navbar ul li{
 	white-space: nowrap;
 }
@@ -129,6 +141,7 @@ h2{
 .banner-image .container { 
 	max-width: 1460px; 
 	padding: 0 25px; 
+	margin: auto auto;
 }
 .banner-image h1 { 
 	margin-bottom: 14px;
@@ -164,7 +177,8 @@ h2{
 	background-size: cover; 
 }
 .banner-image .btn-wrapper { 
-	margin-bottom: 160px; 
+	margin-bottom: 200px;
+	margin-top: 70px; 
 }
 .banner-image .step-wrapper { 
 	max-width: 1090px; 
@@ -514,6 +528,17 @@ h2{
 }
 .site-footer ul.social-media-list li:last-child { 
 	margin-left: 20px; 
+}
+.site-footer .footer-bottom { 
+	background: #111111; 
+	padding: 19px 0; 
+	position: relative; 
+}
+.site-footer .footer-bottom p a { 
+	text-decoration: none; color: #6EABEF; 
+}
+.site-footer .privacy-pol{
+	background-color: #4F4F4F;
 }
 /*footer end*/
 
@@ -1078,16 +1103,24 @@ h4:after{
 	height: auto;
 	margin-right: 15px;
 }
+.sp_menu .nav{
+	flex-direction: column;
+}
 .sp_menu_details{
 	padding-top: 31px;
 }
 .sp_menu ul{
 	list-style-type: none;
-	margin-left: -33px;
 }
 .sp_menu ul li{
 	border-bottom: 0.5px solid #E1E1E1;
 	line-height: 55px;
+}
+.sp_menu ul li.active{
+	background-color: #146371;
+}
+.sp_menu ul li:hover{
+	background-color: #146371;
 }
 .sp_menu ul li a{
 	
@@ -1099,6 +1132,9 @@ h4:after{
 	font-weight: 400;
 	text-decoration: none;
 }
+.sp_menu .nav .nav-item .nav-link{
+			color: white;
+	}
 .sp_menu_active{
 	background-color: #146371;
 	border-left: 1px solid white;
@@ -1107,6 +1143,10 @@ h4:after{
 	width: 845px;
 	height: auto;
 	margin-left: 32px;
+}
+.sp_detail tbody{
+	display: table;
+	width: 100%!important;
 }
 .sp_detail p{
 	font-size: 16px;
@@ -1882,6 +1922,9 @@ h4:after{
 		font-weight: 700;
 		color: #646464;
 	}
+	.sp_menu .nav{
+		display: none!important;
+	}
 
 }
 @media screen and (min-width: 992px) {
@@ -1913,6 +1956,9 @@ h4:after{
 		width: auto;
 		height: auto;
 		margin-right: 0px;
+	}
+	.sp_menu .nav{
+		flex-direction: row!important;
 	}
 	.sp_menu_details{
 		width: auto;
