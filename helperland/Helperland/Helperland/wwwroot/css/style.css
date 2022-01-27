@@ -4,7 +4,6 @@
 }
 html, body {
 	width: 100%;
-	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	overflow-x: hidden;
@@ -1016,6 +1015,12 @@ h4:after{
 			font-weight: 700;
 			text-align: center;
 			align-items: center;
+}
+.Contact_form textarea {
+	height: 146px !important;
+}
+.form-sub{
+	color:#A0A0A0;
 }
 .c_code{
 	background-color: #F4F4F4;

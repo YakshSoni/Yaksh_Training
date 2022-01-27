@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Helperland.Models.ContactU
+
+@{
     ViewData["Title"] = "Home | Contact";
     Layout = "~/Views/Shared/PublicPageLayout.cshtml";
 }
@@ -54,7 +56,7 @@
     <div class="Contact_form mx-auto">
         <form class="row  g-3">
             <div class="col-md-6">
-                <input type="text" name="Firstname" class="form-control" id="Firstname" placeholder="First Name" required>
+                <input asp-for="Name" type="text" name="Firstname" class="form-control" id="Firstname" placeholder="First Name" required>
             </div>
             <div class="col-md-6">
                 <input type="text" name="Lastname" class="form-control" id="Lastname" placeholder="Last Name" required>
@@ -64,21 +66,28 @@
 
                     <div class="col-sm-12 input-group">
                         <span class="c_code align-items-center justify-content-center">+49</span>
-                        <input type="number" name="Phonenumber" class="form-control" id="Phone number" placeholder="Mobile Number" required>
+                        <input asp-for="PhoneNumber" type="tel" name="Phonenumber" class="form-control" id="Phone number" placeholder="Mobile Number" pattern="[0-9]{10}" 
+                               onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" required>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <input type="email" name="Email" class="form-control" id="Email" placeholder="Email address" required>
+                <input asp-for="Email" type="email" name="Email" class="form-control" id="Email" placeholder="Email address" required>
             </div>
             <div class="col-md-12">
-                <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject" required>
+                <select asp-for="SubjectType" class="form-select form-sub" aria-label="Default select example">
+
+                    <option value="1" selected>General</option>
+                    <option value="2">Inquiry</option>
+                    <option value="3">Renewal</option>
+                    <option value="4">Reluctance</option>
+                </select>
             </div>
             <div class="col-md-12">
-                <textarea class="form-control" id="message" placeholder="Messages" rows="4"></textarea>
+                <textarea asp-for="Message" class="form-control" id="message" placeholder="Messages" rows="4"></textarea>
             </div>
             <div class="col-md-12 text-center">
-                <button class="c_sub_btn" type="submit" name="Submit"><h3>Submit</h3></button>
+                <button class="c_sub_btn" type="submit" name="Submit" asp-controller="ContactUs" asp-action="submit"><h3>Submit</h3></button>
             </div>
         </form>
     </div>
