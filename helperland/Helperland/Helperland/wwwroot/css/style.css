@@ -1680,7 +1680,16 @@ h4:after{
 	}
 }
 @media (max-width: 768px) {
+	.our_blog_info .row {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 
+	.our_blog_info .image-wrapper {
+		max-width: 403px;
+		margin: 0 auto;
+		padding-bottom: 10px !important;
+	}
 
 	#sw-2{
 		display: none!important;
@@ -1904,6 +1913,15 @@ h4:after{
 }
 
 @media (max-width: 991px) {
+	.blog-detail-outer {
+		margin: 10px auto !important;
+	}
+	.last-inner {
+		margin: 0 auto !important;
+	}
+	.HelperHand .text-center{
+		margin:0 auto!important;
+	}
 	#sw-1{
 		display: none;
 	}

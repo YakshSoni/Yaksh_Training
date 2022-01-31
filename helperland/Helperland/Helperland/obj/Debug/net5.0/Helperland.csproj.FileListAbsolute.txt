@@ -25,7 +25,6 @@ F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debu
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Helperland.RazorCoreGenerate.cache
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs

@@ -1,5 +1,6 @@
 ﻿using Helperland.Data;
 using Helperland.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,14 @@ namespace Helperland.Controllers
         {
             _helperlandContext = helperlandContext;
         }
-
+        // GET: ContactUsController
         [HttpPost]
-        public IActionResult submit(ContactU contactU)
+        public IActionResult Submit(ContactU contactU)
         {
-            _helperlandContext.ContactUs.Add(contactU);
-            _helperlandContext.SaveChanges();
-            return View();
+            Console.WriteLine(contactU);
+           // _helperlandContext.ContactUs.Add(contactU);
+            //_helperlandContext.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
