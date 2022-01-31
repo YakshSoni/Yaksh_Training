@@ -1,6 +1,7 @@
 ﻿
 using Helperland.Data;
 using Helperland.Models;
+using Helperland.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -36,12 +37,21 @@ namespace Helperland.Controllers
 
         public IActionResult Contact()
         {
-            ContactU contactU = new ContactU();
-            return View(contactU);
+            ContactUsViewModel contactUsViewModel = new ContactUsViewModel();
+            return View(contactUsViewModel);
         }
         [HttpPost]
-        public IActionResult Contact(ContactU contactU)
+        public IActionResult Contact(ContactUsViewModel contactUsViewModel)
         {
+            ContactU contactU = new ContactU()
+            {
+                Name = contactUsViewModel.FirstName + " " + contactUsViewModel.LastName,
+                Email = contactUsViewModel.Email,
+                Subject = contactUsViewModel.Subject,
+                PhoneNumber = contactUsViewModel.Phonenumber,
+                Message = contactUsViewModel.Message,
+                CreatedOn = DateTime.Now
+            };
             //Debug.WriteLine("this is " + contactU.Name);
             _helperlandContext.ContactUs.Add(contactU);
             _helperlandContext.SaveChanges();
