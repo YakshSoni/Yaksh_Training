@@ -38,6 +38,18 @@ namespace Helperland.Controllers
 
         public IActionResult About()
         {
+            string uid = HttpContext.Session.GetString("UserId");
+            if (uid != null)
+            {
+                string uname = HttpContext.Session.GetString("FirstName");
+                ViewBag.Uname = uname;
+
+                ViewBag.login_check = String.Format("loggedin");
+            }
+            else
+            {
+                ViewBag.login_check = null;
+            }
             return View();
         }
 
@@ -48,8 +60,19 @@ namespace Helperland.Controllers
         }
         public IActionResult Contact()
         {
-            ContactUsViewModel contactUsViewModel = new ContactUsViewModel();
-            return View(contactUsViewModel);
+            string uid = HttpContext.Session.GetString("UserId");
+            if (uid != null)
+            {
+                string uname = HttpContext.Session.GetString("FirstName");
+                ViewBag.Uname = uname;
+
+                ViewBag.login_check = String.Format("loggedin");
+            }
+            else
+            {
+                ViewBag.login_check = null;
+            }
+            return View();
         }
         [HttpPost]
         public IActionResult Contact(ContactUsViewModel contactUsViewModel)
@@ -70,11 +93,36 @@ namespace Helperland.Controllers
         }
         public IActionResult FAQ()
         {
+            string uid = HttpContext.Session.GetString("UserId");
+            
+            if (uid != null)
+            {
+                string uname = HttpContext.Session.GetString("FirstName");
+                ViewBag.Uname = uname;
+                ViewBag.login_check = String.Format("loggedin");
+                
+            }
+            else
+            {
+                ViewBag.login_check = null;
+            }
             return View();
         }
 
         public IActionResult Price()
         {
+            string uid = HttpContext.Session.GetString("UserId");
+            if (uid != null)
+            {
+                string uname = HttpContext.Session.GetString("FirstName");
+                ViewBag.Uname = uname;
+
+                ViewBag.login_check = String.Format("loggedin");
+            }
+            else
+            {
+                ViewBag.login_check = null;
+            }
             return View();
         }
         public IActionResult CustomerRegistration()
@@ -120,7 +168,7 @@ namespace Helperland.Controllers
 
        public IActionResult BecomeProvider()
         {
-            CustomerRegistrationViewModel customerRegistrationViewModel = new CustomerRegistrationViewModel();
+            
             return View();
         }
 
@@ -185,17 +233,28 @@ namespace Helperland.Controllers
                     options.Expires = DateTime.Now.AddDays(30);
                     Response.Cookies.Append("Email", fc["Email"], options);
                     Response.Cookies.Append("Password", fc["Password"], options);
-                    return RedirectToAction("welcome", "Home");
+                    ViewBag.logged = string.Format("logged in");
+                    ViewBag.Uname = string.Format(details.FirstOrDefault().FirstName);
+                    return View("Index");
+                    //return RedirectToAction("welcome", "Home");
+                    
                 }
                 else
                 {
+                    
                     ModelState.AddModelError("", "Invalid Credentials");
                     ViewBag.modal = string.Format("invalid");
+                    ViewBag.logged = null;
                     return View("~/Views/Home/Index.cshtml");
                 }
             }
             return View(loginViewModel);
 
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -250,10 +309,30 @@ namespace Helperland.Controllers
             
             return View();
         }
+        public IActionResult book_service()
+        {
+           
+            string uid = HttpContext.Session.GetString("UserId");
+            if (uid != null)
+            {
+                string uname = HttpContext.Session.GetString("FirstName");
+                ViewBag.Uname = uname;
+                ViewBag.login_check = String.Format("loggedin");
+                return View();
+            }
+            else
+            {
+                ViewBag.login_before_service = string.Format("please login first");
+                return RedirectToAction("Index_Login","Home");
+            }
+            
+        }
         public bool email_exist(string email)
         {
             var isCheck = _helperlandContext.Users.Where(eMail => eMail.Email == email).FirstOrDefault();
             return isCheck != null;
         }
+
+
     }
 }
