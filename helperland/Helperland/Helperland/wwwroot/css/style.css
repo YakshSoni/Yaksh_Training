@@ -126,6 +126,35 @@ h2{
 	border-top: none;
 }
 
+#nospModal .modal-content {
+	max-width: 320px;
+}
+
+#nospModal .login-btn {
+	text-align: center;
+}
+
+#nospModal button {
+	color: white;
+	background-color: #6DA9B5;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	border-radius: 17px;
+}
+
+#nospModal .modal-header {
+	border-bottom: none;
+}
+
+#nospModal .modal-body {
+	text-align: center;
+}
+
+#nospModal .modal-footer {
+	border-top: none;
+}
+
+
 /* forgot pswd */
 #frgPsw {
     color: #646464;
@@ -173,7 +202,7 @@ h2{
     position: relative;
 }
 
-.emailModal i {
+.emailModal img {
     position: absolute;
     top: 12px;
     right: 20px;
@@ -183,7 +212,7 @@ h2{
     position: relative;
 }
 
-.pswModal i {
+.pswModal img {
     position: absolute;
     top: 12px;
     right: 20px;
