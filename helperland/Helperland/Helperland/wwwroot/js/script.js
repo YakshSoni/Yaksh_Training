@@ -613,7 +613,6 @@ $(document).on('click', '.save_address_btn', function () {
         if (checkradioid > cnt_addresst) {
             console.log("checkradio " + checkradioid);
             $('#hidden_field2').val(checkradioid);
-            $('#hidden_field').val(0);
         }
         else {
             console.log("checkradio else " + checkradioid);
@@ -626,4 +625,20 @@ $(document).on('click', '.save_address_btn', function () {
     $(".ss_address_create").addClass('fade');
 });
 
+$('input[type=radio][name="ss_address"]').change(function () {
+    var checkradioid = $('input[name=ss_address]:checked').attr('id');
 
+    console.log("this is checkradio " + $('input[name=ss_address]:checked').attr('id'));
+    console.log("this is cnt_addresst" + cnt_addresst);
+
+    if (checkradioid > cnt_addresst) {
+        console.log("checkradio " + checkradioid);
+        $('#hidden_field2').val(checkradioid);
+    }
+    else {
+        console.log("checkradio else " + checkradioid);
+        $('#hidden_field2').val(0);
+        $('#hidden_field').val(checkradioid);
+    }
+
+});

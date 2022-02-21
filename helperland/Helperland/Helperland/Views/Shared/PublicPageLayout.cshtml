@@ -46,7 +46,7 @@
                         <li class="nav-item">
                             <a asp-action="BecomeProvider" asp-controller="Home" class="nav-item text-white head_item faq_active">Become a Helper</a>
                         </li>
-                        @if (ViewBag.login_check == null)
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("loggedIn") == null)
                         {
                             <li class="nav-item">
                                 <a asp-action="Index_Login" class="nav-item text-white head_item faq_active" asp-controller="Home">Login</a>
@@ -77,7 +77,7 @@
                                     <li>
                                         <div class="login_info_container">
                                             <div class="login_welcome_txt">Welcome</div>
-                                            <div class="login_welcome_name">@ViewBag.Uname</div>
+                                            <div class="login_welcome_name">@HttpContextAccessor.HttpContext.Session.GetString("UserName")</div>
                                         </div>
                                         <div>
                                             <hr class="seperator no_mar" />

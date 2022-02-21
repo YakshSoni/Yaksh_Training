@@ -41,18 +41,7 @@ namespace Helperland.Controllers
 
         public IActionResult About()
         {
-            string uid = HttpContext.Session.GetString("UserId");
-            if (uid != null)
-            {
-                string uname = HttpContext.Session.GetString("FirstName");
-                ViewBag.Uname = uname;
-
-                ViewBag.login_check = String.Format("loggedin");
-            }
-            else
-            {
-                ViewBag.login_check = null;
-            }
+            
             return View();
         }
 
@@ -63,18 +52,7 @@ namespace Helperland.Controllers
         }
         public IActionResult Contact()
         {
-            string uid = HttpContext.Session.GetString("UserId");
-            if (uid != null)
-            {
-                string uname = HttpContext.Session.GetString("FirstName");
-                ViewBag.Uname = uname;
-
-                ViewBag.login_check = String.Format("loggedin");
-            }
-            else
-            {
-                ViewBag.login_check = null;
-            }
+            
             return View();
         }
         [HttpPost]
@@ -96,36 +74,13 @@ namespace Helperland.Controllers
         }
         public IActionResult FAQ()
         {
-            string uid = HttpContext.Session.GetString("UserId");
             
-            if (uid != null)
-            {
-                string uname = HttpContext.Session.GetString("FirstName");
-                ViewBag.Uname = uname;
-                ViewBag.login_check = String.Format("loggedin");
-                
-            }
-            else
-            {
-                ViewBag.login_check = null;
-            }
             return View();
         }
 
         public IActionResult Price()
         {
-            string uid = HttpContext.Session.GetString("UserId");
-            if (uid != null)
-            {
-                string uname = HttpContext.Session.GetString("FirstName");
-                ViewBag.Uname = uname;
-
-                ViewBag.login_check = String.Format("loggedin");
-            }
-            else
-            {
-                ViewBag.login_check = null;
-            }
+            
             return View();
         }
         public IActionResult CustomerRegistration()
@@ -244,10 +199,11 @@ namespace Helperland.Controllers
                         Response.Cookies.Delete("Email");
                         Response.Cookies.Delete("Password");
                     }
-                    ViewBag.logged = string.Format("logged in");
-                    ViewBag.Uname = string.Format(details.FirstOrDefault().FirstName);
+                    HttpContext.Session.SetString("loggedIn", "yes");
+                    HttpContext.Session.SetString("UserName", details.FirstOrDefault().FirstName);
+                    
                     return View("Index");
-                    //return RedirectToAction("welcome", "Home");
+                    
                     
                 }
                 else
