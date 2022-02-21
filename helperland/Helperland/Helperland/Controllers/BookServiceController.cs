@@ -175,9 +175,12 @@ namespace Helperland.Controllers
                 _helperlandContext.ServiceRequestAddresses.Add(serviceRequestAddress);
                 _helperlandContext.SaveChanges();
             }
-           
 
-            return RedirectToAction("Index","Home");
+            
+            HttpContext.Session.SetString("showBookSuccess", "yes");
+            
+            HttpContext.Session.SetInt32("serviceRequestID", getservicerequestid);
+            return View("~/Views/Home/Index.cshtml");
         }
 
         
