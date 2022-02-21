@@ -343,8 +343,10 @@ namespace Helperland.Controllers
 
                 }
                 cnt = 1;
-                getAddress();
-                
+                int address_fetch_cnt = getAddress();
+
+                HttpContext.Session.SetInt32("address_fetch_cnt", address_fetch_cnt);
+
                 return View(userAddresses);
             }
             else
@@ -362,8 +364,9 @@ namespace Helperland.Controllers
             return isCheck != null;
         }
 
-        public void getAddress()
+        public int getAddress()
         {
+            
             Debug.WriteLine("this methd is called");
             HttpContext.Session.SetString("getaddress", "set");
             var userid = Int32.Parse(HttpContext.Session.GetString("UserId"));
@@ -378,14 +381,23 @@ namespace Helperland.Controllers
                                  postalcode = uaddress.PostalCode
                              }).ToList();
 
+            var last_add_id = (from t in _helperlandContext.UserAddresses
+                                       where t.UserId == userid
+                                       orderby t.AddressId
+                                       select t.AddressId).Last();
+
             if (addresses.FirstOrDefault() != null)
             {
+                
                 userAddresses.address = new List<AddressViewModel>();
                 foreach (var add in addresses)
                 {
-                    userAddresses.address.Add(add);   
+                    userAddresses.address.Add(add);
+                    
                 }
             }
+            
+            return last_add_id;
         }
     }
 }

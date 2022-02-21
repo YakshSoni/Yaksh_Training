@@ -125,35 +125,57 @@ namespace Helperland.Controllers
             _helperlandContext.ServiceRequestExtras.Add(service1);
             _helperlandContext.SaveChanges();
 
-            var addressid = bookServiceViewModel.addressId;
-
-            var address = (from uaddress in _helperlandContext.UserAddresses
-                             where uaddress.AddressId == addressid
-                             select new 
-                             {
-                                 
-                                 addressline1 = uaddress.AddressLine1,
-
-                                 city = uaddress.City,
-                                 phonenumber = uaddress.Mobile,
-
-                                 postalcode = uaddress.PostalCode
-                             });
-
             var u_email = _helperlandContext.Users.Where(id => id.UserId == Int32.Parse(userid)).FirstOrDefault();
 
-            ServiceRequestAddress serviceRequestAddress = new ServiceRequestAddress()
+            var addressid = bookServiceViewModel.addressId;
+            var addressid2 = bookServiceViewModel.addressId2;
+
+            if(addressid2 != 0)
             {
-                ServiceRequestId = getservicerequestid,
-                AddressLine1 = address.FirstOrDefault().addressline1,
-                City = address.FirstOrDefault().city,
-                PostalCode = address.FirstOrDefault().postalcode,
-                Mobile= address.FirstOrDefault().phonenumber,
-                Email = u_email.Email
+                ServiceRequestAddress serviceRequestAddress = new ServiceRequestAddress()
+                {
+                    ServiceRequestId = getservicerequestid,
+                    AddressLine1 = bookServiceViewModel.streetname + " " + bookServiceViewModel.houseno,
+                    City = bookServiceViewModel.cityname,
+                    PostalCode = bookServiceViewModel.postalCode,
+                    Mobile = bookServiceViewModel.phoneno,
+                    Email = u_email.Email
+
+                };
+                _helperlandContext.ServiceRequestAddresses.Add(serviceRequestAddress);
+                _helperlandContext.SaveChanges();
+            }
+            else
+            {
+                var address = (from uaddress in _helperlandContext.UserAddresses
+                               where uaddress.AddressId == addressid
+                               select new
+                               {
+
+                                   addressline1 = uaddress.AddressLine1,
+
+                                   city = uaddress.City,
+                                   phonenumber = uaddress.Mobile,
+
+                                   postalcode = uaddress.PostalCode
+                               });
+
                 
-            };
-            _helperlandContext.ServiceRequestAddresses.Add(serviceRequestAddress);
-            _helperlandContext.SaveChanges();
+
+                ServiceRequestAddress serviceRequestAddress = new ServiceRequestAddress()
+                {
+                    ServiceRequestId = getservicerequestid,
+                    AddressLine1 = address.FirstOrDefault().addressline1,
+                    City = address.FirstOrDefault().city,
+                    PostalCode = address.FirstOrDefault().postalcode,
+                    Mobile = address.FirstOrDefault().phonenumber,
+                    Email = u_email.Email
+
+                };
+                _helperlandContext.ServiceRequestAddresses.Add(serviceRequestAddress);
+                _helperlandContext.SaveChanges();
+            }
+           
 
             return RedirectToAction("Index","Home");
         }

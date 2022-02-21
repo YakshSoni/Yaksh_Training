@@ -331,9 +331,19 @@
                     $('#service_date').attr('min', max_date);
 
                 });
+                
             </script>
         }
+
     }
-    
+    @if(HttpContextAccessor.HttpContext.Session.GetInt32("address_fetch_cnt") != null)
+    {
+        <script>
+            var cnt_addresst = @HttpContextAccessor.HttpContext.Session.GetInt32("address_fetch_cnt");
+            var cnt_address = cnt_addresst + 1;
+            console.log("this is cnt_addresst" + cnt_addresst);
+        </script>
+    }
+
 </body>
 </html>

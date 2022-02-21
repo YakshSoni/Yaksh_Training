@@ -372,10 +372,7 @@ $(document).on('click', '.add_address_btn', function () {
     $(".ss_address_create").removeClass('fade');
     $(".add_address_btn").addClass('fade');
 });
-$(document).on('click', '.save_address_btn', function () {
-    $(".add_address_btn").removeClass('fade');
-    $(".ss_address_create").addClass('fade');
-});
+
 $(document).on('click', '.cancel_address_btn', function () {
     $(".add_address_btn").removeClass('fade');
     $(".ss_address_create").addClass('fade');
@@ -460,7 +457,10 @@ $(document).on('change', '#basic_time', function () {
 const cust_addresses = document.querySelector('.cust_addresses');
 
 
+
 $(document).on('click', '.save_address_btn', function () {
+
+    
 
     var approve1 = 0;
     var approve2 = 0;
@@ -524,6 +524,8 @@ $(document).on('click', '.save_address_btn', function () {
         const input_radio = document.createElement("input");
         input_radio.classList.add('radio_address');
         input_radio.classList.add('form-check-input');
+        input_radio.id = cnt_address;
+        cnt_address += 1;
         input_radio.type = "radio";
         input_radio.name = "ss_address";
         col_md_2.appendChild(input_radio);
@@ -599,15 +601,29 @@ $(document).on('click', '.save_address_btn', function () {
         $(".add_address_btn").addClass('fade');
         $(".ss_address_create").removeClass('fade');
     }
+
+    $('#' + cnt_address).prop('checked', true);
+
+    $('input[type=radio][name="ss_address"]').change(function () {
+        var checkradioid = $('input[name=ss_address]:checked').attr('id');
+
+        console.log("this is checkradio " + $('input[name=ss_address]:checked').attr('id'));
+        console.log("this is cnt_addresst" + cnt_addresst);
+
+        if (checkradioid > cnt_addresst) {
+            console.log("checkradio " + checkradioid);
+            $('#hidden_field2').val(checkradioid);
+            $('#hidden_field').val(0);
+        }
+        else {
+            console.log("checkradio else " + checkradioid);
+            $('#hidden_field2').val(0);
+            $('#hidden_field').val(checkradioid);
+        }
+
+    });
+    $(".add_address_btn").removeClass('fade');
+    $(".ss_address_create").addClass('fade');
 });
 
-//$(document).on('click', '.ss_address_radio', function () {
-//    var checkradio = $('input[name=cust_address]:checked').attr('id');
-//    console.log("checkradio " + checkradio);
-//});
 
-$('input[type=radio][name="ss_address"]').change(function () {
-    var checkradioid = $('input[name=ss_address]:checked').attr('id');
-    console.log("checkradio " + checkradioid);
-    $('#hidden_field').val(checkradioid);
-});

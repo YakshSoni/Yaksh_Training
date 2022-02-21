@@ -232,41 +232,44 @@
                         <label>Enter your details ,So we can serve you in a better way!</label>
                     </div>
                     <div class="row cust_addresses">
-                        
-                        @{ 
-                            if(Model != null)
+
+                        @{
+                            if (Model != null)
                             {
-                                foreach(var data in Model.address)
-                                { 
-                                                <div class="row ss_address_radio">
-                                                    <div class="col-md-2 text-center">
-                                                        <input name="ss_address" class="radio_address form-check-input" id="@data.id" type="radio" />
-                                                    </div>
-                                                    <div class="col-md-8 align-items-center">
-                                                        <div class="row pt-2">
-                                                            <div class="col-sm-12 d-flex">
-                                                                <label>Address : </label>
-                                                                <pre class="ss_aaddress_addressline1"> @data.addressline1 </pre>
-                                                                
-                                                                <pre>,</pre>
-                                                                <pre class="ss_address_city">@data.city </pre>
-                                                                <pre class="ss_address_pin">@data.postalcode</pre>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-12 d-flex">
-                                                                <label>Phonenumber : </label>
-                                                                <p class="ss_address_phone"> @data.phonenumber</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                foreach (var data in Model.address)
+                                {
+                                    <div class="row ss_address_radio">
+                                        <div class="col-md-2 text-center">
+                                            <input name="ss_address" class="radio_address form-check-input" id="@data.id" type="radio" />
+                                        </div>
+                                        <div class="col-md-8 align-items-center">
+                                            <div class="row pt-2">
+                                                <div class="col-sm-12 d-flex">
+                                                    <label>Address : </label>
+                                                    <pre class="ss_aaddress_addressline1"> @data.addressline1 </pre>
+
+                                                    <pre>,</pre>
+                                                    <pre class="ss_address_city">@data.city </pre>
+                                                    <pre class="ss_address_pin">@data.postalcode</pre>
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 d-flex">
+                                                    <label>Phonenumber : </label>
+                                                    <p class="ss_address_phone"> @data.phonenumber</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 }
                             }
                         }
-                        
+
                         <div>
                             <input asp-for="addressId" id="hidden_field" type="hidden" />
+                        </div>
+                        <div>
+                            <input asp-for="addressId2" id="hidden_field2" type="hidden" />
                         </div>
                     </div>
                     
@@ -285,7 +288,7 @@
                                 </div>
                                 <div class="row pt-1">
                                     <div class="col-sm-12">
-                                        <input id="add_street" type="text" placeholder="Street Name" class="form-control" name="streetname" />
+                                        <input asp-for="streetname" id="add_street" type="text" placeholder="Street Name" class="form-control" />
                                         <div id="add_street_err" class="text-danger fade">
                                             streetname required
                                         </div>
@@ -297,7 +300,7 @@
                                 </div>
                                 <div class="row pt-1">
                                     <div class="col-sm-12">
-                                        <input id="add_postal" type="text" placeholder="Postalcode" class="form-control" name="postal" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+                                        <input asp-for="postalCode" id="add_postal" type="text" placeholder="Postalcode" class="form-control" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
 
                                     </div>
                                 </div>
@@ -309,7 +312,7 @@
                                     <div class="col-sm-12">
                                         <div class="col-sm-12 input-group">
                                             <span class="c_code align-items-center justify-content-center">+49</span>
-                                            <input type="text" name="Phonenumber" class="form-control" id="add_mobile" placeholder="Mobile Number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" pattern="[0-9]{10}" />
+                                            <input type="text" asp-for="phoneno" class="form-control" id="add_mobile" placeholder="Mobile Number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" pattern="[0-9]{10}" />
 
                                         </div>
                                         <div id="add_mobile_err" class="text-danger fade">
@@ -333,7 +336,7 @@
                                 </div>
                                 <div class="row pt-1">
                                     <div class="col-sm-12">
-                                        <input id="add_house" type="text" placeholder="House number" class="form-control" name="houseno" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+                                        <input asp-for="houseno" id="add_house" type="text" placeholder="House number" class="form-control" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
                                         <div id="add_house_err" class="text-danger fade">
                                             House number required
                                         </div>
@@ -345,7 +348,7 @@
                                 </div>
                                 <div class="row pt-1">
                                     <div class="col-sm-12">
-                                        <input id="add_city" type="text" placeholder="City" class="form-control" name="cityname" />
+                                        <input asp-for="cityname" id="add_city" type="text" placeholder="City" class="form-control"  />
                                         <div id="add_city_err" class="text-danger fade">
                                             city name required
                                         </div>
