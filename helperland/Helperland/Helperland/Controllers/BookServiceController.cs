@@ -90,10 +90,12 @@ namespace Helperland.Controllers
             decimal total = new decimal(subtotal);
 
             Debug.WriteLine("this is service start time " + startdate);
+            var get_ser_id = _helperlandContext.ServiceRequests.OrderBy(x=>x.ServiceRequestId).Last(x=>x.UserId == Int32.Parse(userid));
+            Debug.WriteLine("this is previous service id " + get_ser_id.ServiceId);
             ServiceRequest service = new ServiceRequest()
             {
                 UserId = Int32.Parse(userid),
-                ServiceId = 1,
+                ServiceId = get_ser_id.ServiceId + 1,
                 ZipCode = zip,
                 ServiceStartDate = startdate,
                 ServiceHourlyRate = 20,
@@ -103,9 +105,11 @@ namespace Helperland.Controllers
                 TotalCost = total,
                 PaymentDue = false,
                 HasPets = haspet,
+                Comments = bookServiceViewModel.ServiceRequestViewModel.comments,
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now,
-                Distance  = 10
+                Distance  = 10,
+                Status = 1
             };
             _helperlandContext.ServiceRequests.Add(service);
             _helperlandContext.SaveChanges();

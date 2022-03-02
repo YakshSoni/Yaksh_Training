@@ -2,6 +2,9 @@
 *{
 	font-family: "Roboto",sans-serif;
 }
+pre {
+	font-family: "Roboto",sans-serif;
+}
 html, body {
 	width: 100%;
 	margin: 0px;
@@ -29,6 +32,125 @@ h2{
   font-size: 16px!important;
   font-weight: 400!important;
 }
+/* ------------------- dashboard navbar --------------- */
+
+.serviceHistory-nav {
+	background-color: #525252;
+}
+
+.shSmallNav .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6px 14px 4px 15px;
+}
+
+.shSmallNav .hamburger i {
+	font-size: 36px;
+	color: #858585;
+	padding-right: 10px;
+}
+
+.sh-sp-btn {
+	background: #29626d 0% 0% no-repeat padding-box;
+	border: 1px solid #ffffff80;
+	border-radius: 20px;
+}
+
+.us-nav a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 300;
+	padding: 9px 17px;
+}
+
+.shSmallNav .smallNavNofitify a {
+	position: relative;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+	padding: 9px 17px;
+	color: white;
+}
+
+
+.us-notification a {
+	position: relative;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+}
+
+.notify-badge {
+	position: absolute;
+	top: -3px;
+	right: 9px;
+	padding: 0px 6px;
+	border-radius: 50%;
+	background: red;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.us-user .dropdown-menu[data-bs-popper] {
+	top: 166%;
+}
+
+.us-user .profile-img {
+	height: 32px;
+	width: 32px;
+}
+
+.us-user-dropdown a:hover {
+	background-color: transparent;
+}
+
+/* ----------------small nav--------------- */
+.shSmallNav .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6px 14px 4px 15px;
+}
+
+.hamburger-img {
+	height: 30px;
+	width: 34px;
+}
+
+.shSmallNav .smallNavNofitify a {
+	position: relative;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+	padding: 9px 17px;
+	color: white;
+}
+
+.sm-notify-badge {
+	position: absolute;
+	padding: 0px 6px;
+	border-radius: 50%;
+	background: red;
+	font-size: 13px;
+	font-weight: bold;
+	top: -2px;
+	right: 5px;
+	color: #fff;
+}
+
+.fb-social {
+	margin-right: 30px;
+}
+
+
+/*----------- media-------------- */
+
+
+
+
+
+
+
 /*------- login-model--------*/
 
 #exampleModal {
@@ -183,8 +305,306 @@ h2{
 	border-top: none;
 }
 
+#datasaveModal .modal-content {
+	max-width: 320px;
+}
 
-/* forgot pswd */
+#datasaveModal .login-btn {
+	text-align: center;
+}
+
+#datasaveModal button {
+	color: white;
+	background-color: #6DA9B5;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	border-radius: 17px;
+}
+
+#datasaveModal .modal-header {
+	border-bottom: none;
+}
+
+#datasaveModal .modal-body {
+	text-align: center;
+}
+
+#datasaveModal .modal-footer {
+	border-top: none;
+}
+
+
+#passchangeModal .modal-content {
+	max-width: 320px;
+}
+
+#passchangeModal .login-btn {
+	text-align: center;
+}
+
+#passchangeModal button {
+	color: white;
+	background-color: #6DA9B5;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	border-radius: 17px;
+}
+
+#passchangeModal .modal-header {
+	border-bottom: none;
+}
+
+#passchangeModal .modal-body {
+	text-align: center;
+}
+
+#passchangeModal .modal-footer {
+	border-top: none;
+}
+
+
+
+.delete_modal .modal-content {
+	max-width: 320px;
+}
+
+.delete_modal .login-btn {
+	text-align: center;
+}
+
+.delete_modal button {
+	color: white;
+	background-color: #6DA9B5;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	border-radius: 17px;
+}
+	.delete_modal button.no_btn {
+		color: white;
+		background-color: #FF7B6D;
+		padding: 5px 15px;
+		border: 1px solid transparent;
+		border-radius: 17px;
+	}
+.delete_modal .modal-header {
+	border-bottom: none;
+}
+
+.delete_modal .modal-body {
+	text-align: center;
+}
+
+.delete_modal .modal-footer {
+	border-top: none;
+}
+
+/* --------------------------------- dashboard modals ---------------------------------------*/
+/* ------------------------------ servicedetail modal ---------------------------------- */
+
+#servicedetailModalLabel {
+	font-size: 18px;
+	color: #646464;
+	font-weight: 500;
+}
+
+.servicedetail_modal .modal-content {
+	max-width: 500px;
+}
+
+.servicedetail_modal .modal-header {
+	border-bottom: none;
+}
+
+.servicedetail_modal .modal-footer {
+	border-top: none;
+}
+
+.servicedetail_modal pre {
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: 400;
+	color: #4F4F4F;
+}
+
+.servicedetail_modal .scheduled_time {
+	font-size: 20px;
+	font-weight: 700;
+	color: #4F4F4F;
+}
+
+.servicedetail_modal label {
+	font-size: 16px;
+	font-weight: 500;
+	color: #4F4F4F;
+}
+
+.servicedetail_modal .service_amount,
+.servicedetail_modal .amount_symbol {
+	font-size: 32px;
+	font-weight: 700;
+	color: #1D7A8C;
+}
+
+.servicedetail_modal .seperator {
+	color: #CCCCCC;
+}
+
+.servicedetail_modal .cancel_btn {
+	background-color: #FF6B6B;
+	color: white;
+	border-radius: 17px;
+	padding: 5px 15px;
+	border: none;
+}
+
+.servicedetail_modal .service_reschedule_btn {
+	background-color: #1D7A8C;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 17px;
+	margin-right: 5px;
+	border: none;
+}
+
+/*----------------------------------reschedule modal-----------------------------*/
+.reschedule_modal .modal-content {
+	max-width: 400px;
+}
+
+.reschedule_modal .update_btn {
+	background-color: #1D7A8C;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 17px;
+	margin-right: 5px;
+	border: none;
+}
+
+.reschedule_modal .update-container {
+	margin: 5px 20px;
+}
+
+/*-----------------------------------cancel service modal --------------------------*/
+.cancelservice_modal .modal-content {
+	max-width: 320px;
+}
+
+.cancelservice_modal .login-btn {
+	text-align: center;
+}
+
+.cancelservice_modal button {
+	color: white;
+	background-color: #6DA9B5;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	border-radius: 17px;
+}
+
+	.cancelservice_modal button.no_btn {
+		color: white;
+		background-color: #FF7B6D;
+		padding: 5px 15px;
+		border: 1px solid transparent;
+		border-radius: 17px;
+	}
+
+.cancelservice_modal .modal-header {
+	border-bottom: none;
+}
+
+.cancelservice_modal .modal-body {
+	text-align: center;
+}
+
+.cancelservice_modal .modal-footer {
+	border-top: none;
+}
+/* ------------------------------------servie history modals-------------------------------------*/
+ratesp_modal .modal-content {
+	max-width: 450px;
+}
+
+.ratesp_modal .sp_ratings {
+	margin: 5px 0 10px 10px;
+	width: 80%;
+}
+
+.ratesp_modal p {
+	margin-bottom: 0;
+}
+
+.ratesp_modal .btn-close {
+	margin-bottom: 40px;
+}
+
+.ratesp_modal .modal-header {
+	border-bottom: none;
+	padding-bottom: 10px;
+}
+
+.ratesp_modal .modal-body {
+	padding-top: 10px;
+	padding-left: 20px;
+}
+
+.ratesp_modal .modal-footer {
+	border-top: none;
+}
+
+.ratesp_modal pre {
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: 400;
+	color: #4F4F4F;
+}
+
+.ratesp_modal .scheduled_time {
+	font-size: 20px;
+	font-weight: 700;
+	color: #4F4F4F;
+}
+
+.ratesp_modal label {
+	font-size: 16px;
+	font-weight: 500;
+	color: #4F4F4F;
+}
+
+.ratesp_modal .seperator {
+	color: #CCCCCC;
+}
+
+.ratesp_modal .service_reschedule_btn {
+	background-color: #1D7A8C;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 17px;
+	margin-right: 5px;
+	border: none;
+}
+
+.ratesp_modal .sp_rate_textarea {
+	height: 60px !important;
+	margin: 5px 12px;
+	width: 93%;
+}
+
+.sh_rate_cap_border {
+	width: 78px !important;
+	height: 78px !important;
+	border: 1px solid #b0c9ce;
+	opacity: 1;
+	border-radius: 50%;
+	padding-left: 5px !important;
+	padding-top: 5px !important;
+}
+
+.rating_stars {
+	cursor: pointer;
+}
+
+/*------------------------------------------ forgot pswd ------------------------------------*/
 #frgPsw {
     color: #646464;
 }
@@ -770,8 +1190,8 @@ h2{
 
 /*--------------------------------------------------------------------faq page-----------------------------------------------------------*/
 
-.faq_nav_bg{
-	background-color: #737381;
+.faq_nav_bg {
+	background-color: #525252;
 }
 
 .faq_active{
@@ -1341,6 +1761,7 @@ h4:after{
 }
 .sp_menu_details{
 	padding-top: 31px;
+	margin-bottom: 50px;
 }
 .sp_menu ul{
 	list-style-type: none;
@@ -1377,10 +1798,10 @@ h4:after{
 	height: auto;
 	margin-left: 32px;
 }
-.sp_detail tbody{
+/*.sp_detail tbody{
 	display: table;
 	width: 100%!important;
-}
+}*/
 .sp_detail p{
 	font-size: 16px;
 	font-weight: 700;
@@ -1413,7 +1834,49 @@ h4:after{
 }
 
 /*-------------------------------------------------Service History-------------------------------------*/
-.sh_export_btn{
+/* ------------------------------------------------dashboard and data table----------------------------*/
+.sh_new_req_btn {
+	height: 34px;
+	width: 170px;
+	background-color: #146371;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	border: none;
+	border-radius: 17px;
+	margin-left: 18px;
+}
+
+.sr_reschedule_btn {
+	background-color: #1D7A8C;
+	padding: 8px 10px;
+	color: white;
+	border-radius: 17px;
+	margin-right: 5px;
+	border: none;
+}
+
+	.sr_reschedule_btn:hover {
+		background-color: white;
+		color: #1D7A8C;
+		border: 1px solid #1D7A8C;
+	}
+
+.sr_cancel_btn {
+	background-color: #FF6B6B;
+	color: white;
+	border-radius: 17px;
+	padding: 8px 10px;
+	border: none;
+}
+
+	.sr_cancel_btn:hover {
+		background-color: white;
+		color: #FF6B6B;
+		border: 1px solid #FF6B6B;
+	}
+
+.sh_export_btn {
 	height: 34px;
 	width: 70px;
 	background-color: #146371;
@@ -1422,8 +1885,58 @@ h4:after{
 	font-weight: 400;
 	border: none;
 	border-radius: 17px;
-	margin-left: 50px;
+	
 }
+
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1,
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+	background-color: white !important;
+}
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+	border-top: none;
+}
+
+
+table.dataTable thead .sorting {
+	background-image: url("../images/sort.png");
+}
+
+table.dataTable thead .sorting_asc {
+	background-image: url("../images/sort_asc.png") !important;
+}
+
+table.dataTable thead .sorting_desc {
+	background-image: url("../images/sort_desc.png") !important;
+}
+
+
+#shTable thead {
+	color: #646464;
+	background-color: #F9F9F9;
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid #e1e1e1;
+}
+
+	#shTable thead th {
+		padding: 17px 20px 20px 14px;
+	}
+
+		#shTable thead th img {
+			margin: -2px 0 0 8px;
+		}
+
+#shTable tbody td {
+	padding: 10px 20px 10px 14px;
+	color: #646464;
+}
+
+#shTable tbody tr {
+	border: 1px solid #e1e1e1;
+}
+
+
 .sh_title{
 	font-size: 22px;
 	font-weight: 700;
@@ -2461,7 +2974,322 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #psModal .fade {
 	display: none;
 }
+
+
+/*--------------------------------------My Settings-----------------------------------------------------*/
+#v-pills-mySetting .fade {
+	display: none;
+}
+
+#v-pills-mySetting .show {
+	display: block;
+}
+
+.mySetting_header {
+	margin-top: 5px;
+	align-items: center;
+	border-bottom: 2px solid #DCDCDC;
+}
+
+	.mySetting_header .fade {
+		display: none;
+	}
+
+	.mySetting_header .col-lg-3 {
+		height: 70px;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+		.mySetting_header .col-lg-3.active {
+			border-bottom: 2px solid #1D7A8C;
+		}
+
+			.mySetting_header .col-lg-3.active a {
+				color: #1D7A8C;
+			}
+
+		.mySetting_header .col-lg-3 a {
+			margin-top: 24px;
+			text-decoration: none;
+			margin-bottom: 0;
+			font-size: 16px;
+			font-weight: 500;
+			color: #4F4F4F;
+			white-space: nowrap;
+		}
+
+#myDetails label {
+	padding-left: 0;
+	font-size: 16px;
+	font-weight: 500;
+	color: #4F4F4F;
+}
+
+#myDetails .input-group {
+	padding: 0;
+}
+
+#myDetails .col-md-4 {
+	padding-right: 30px;
+}
+
+#myDetails select {
+	height: 46px;
+}
+
+#myDetails .col-sm-3,
+#myDetails .col-sm-4,
+#myDetails .col-sm-5,
+#myDetails .col-sm-2 {
+	padding: 0;
+	padding-right: 5px;
+}
+
+.myDetails_save {
+	height: 46px;
+	background-color: #1D7A8C;
+	border-radius: 23px;
+	border: none;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 20px;
+	white-space: nowrap;
+}
+
+.addresses_content .addresses_header {
+	height: 60px;
+	align-items: center;
+	background-color: #F3F3F3;
+	border: 1px solid #DCDCDC;
+}
+
+.addresses_content label {
+	
+	font-size: 16px;
+	font-weight: 700;
+	color: #4F4F4F;
+}
+
+.addresses_content .address_data {
+	border: 1px solid #DCDCDC;
+}
+
+	.addresses_content .address_data p {
+		font-weight: 400;
+		margin-bottom: 0;
+	}
+
+	.addresses_content .address_data pre {
+		font-weight: 400;
+		color: #4F4F4F;
+		font-size: 16px;
+		margin-bottom: 0;
+		font-family: "Roboto",sans-serif;
+	}
+
+	.addresses_content .address_data .col-sm-9 {
+		padding-left: 30px;
+	}
+
+	.addresses_content .address_data .ph_row {
+		margin-bottom: 10px;
+	}
+
+	.addresses_content .address_data .interact_address .col-sm-2 img,
+	.addresses_content .address_data .interact_address .col-sm-6 img {
+		margin-top: 20px;
+	}
+
+.addresses_header .col-sm-3 {
+	padding-left: 30px;
+}
+
+
+.changepass_content label {
+	padding-left: 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: #4F4F4F;
+}
+
+/*-----------------------edit address modal --------------------*/
+.address_modal {
+	color: #646464;
+}
+
+	.address_modal .modal-dialog {
+		justify-content: center;
+	}
+
+	.address_modal .modal-content {
+		max-width: 520px;
+	}
+
+	.address_modal .modal-header {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+		.address_modal .modal-header h5 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+	.address_modal .login-btn {
+		text-align: center;
+	}
+
+	.address_modal .save_address_btn {
+		color: white;
+		background-color: #6DA9B5;
+		padding: 5px 120px;
+		border: 1px solid transparent;
+		border-radius: 17px;
+		width: 100%;
+	}
+
+	.address_modal .modal-footer {
+		border-top: none;
+	}
+
+		.address_modal .modal-footer a {
+			text-decoration: none;
+			color: #006072;
+		}
+
+	.address_modal .fade {
+		display: none;
+	}
+
+	.address_modal label {
+		font-size: 16px;
+		font-weight: 500;
+		color: #4F4F4F;
+	}
+
+
+
+/* -----------------------------------------new address modal -----------------------------------------*/
+.new_address_modal {
+	color: #646464;
+}
+
+	.new_address_modal .modal-dialog {
+		justify-content: center;
+	}
+
+	.new_address_modal .modal-content {
+		max-width: 520px;
+	}
+
+	.new_address_modal .modal-header {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+		.new_address_modal .modal-header h5 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+	.new_address_modal .login-btn {
+		text-align: center;
+	}
+
+	.new_address_modal .save_address_btn {
+		color: white;
+		background-color: #6DA9B5;
+		padding: 5px 120px;
+		border: 1px solid transparent;
+		border-radius: 17px;
+		width: 100%;
+	}
+
+	.new_address_modal .modal-footer {
+		border-top: none;
+	}
+
+		.new_address_modal .modal-footer a {
+			text-decoration: none;
+			color: #006072;
+		}
+
+	.new_address_modal .fade {
+		display: none;
+	}
+
+	.new_address_modal label {
+		font-size: 16px;
+		font-weight: 500;
+		color: #4F4F4F;
+	}
+
+
+/* ---------------------------------- datatable css -------------------------------------------------- */
+#datatable_thead {
+	background-color: #F9F9F9 !important;
+	border: none !important;
+}
+
+#dataTable {
+	border: 1px solid #E1E1E1 !important;
+}
+#shTable {
+	border: 1px solid #E1E1E1 !important;
+}
+
+	#dataTable tbody {
+		border: 1px solid #E1E1E1 !important;
+	}
+
+.table-bottom {
+	margin-top: 10px;
+}
+
+.dataTables_info {
+	padding: 5px 5px 5px 15px !important;
+}
+
+.dataTables_length label,
+.dataTables_info {
+	color: #646464 !important;
+	font-size: 16px;
+	font-weight: 400;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	background: transparent;
+	background-color: white !important;
+	color: #1D7A8C;
+	border-radius: 50% !important;
+}
+
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+		background-color: #1D7A8C !important;
+		color: white !important;
+	}
+
 /*--------------------------------------media queries--------------------------------------------------*/
+@media (max-width: 467px) {
+	.mySetting_header .col-lg-3 {
+		width: 30%;
+		padding: 0;
+	}
+
+	.addresses_header .col-sm-2 {
+		display: none !important;
+	}
+
+	.address_data .col-sm-3 {
+		margin-left: 10px !important;
+		margin-bottom: 10px !important;
+		width: auto;
+	}
+}
 @media (max-width: 500px){
 	.scroll-top{
 		display: none!important;
@@ -2506,8 +3334,147 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 		align-items: center;
 		text-align: center;
 	}
+
+	#myDetails .personal_info .col-md-4 {
+		width: 100% !important;
+		margin-bottom: 10px;
+	}
+
+	#myDetails .phone_num .col-md-4 {
+		width: 100% !important;
+		margin-bottom: 10px;
+	}
+
+	.addresses_header .col-sm-3 {
+		padding: 0;
+		width: auto;
+	}
+
+	.addresses_header .col-sm-2 {
+		margin-left: auto !important;
+		width: auto;
+	}
+
+	.addresses_content .address_data .col-sm-9 {
+		padding-left: 10px;
+	}
+
+	.addresses_content .address_data .interact_address {
+		margin-right: 0 !important;
+	}
+
+		.addresses_content .address_data .interact_address .col-sm-2 {
+			margin-left: 0 !important;
+			width: auto;
+		}
+
+	.address_data .col-sm-9 {
+		width: auto;
+	}
+
+	.address_data .col-sm-3 {
+		width: auto;
+	}
+
+	.dash_btns {
+		flex-direction: column;
+	}
 }
 
+@media screen and (max-width: 600px) {
+	.firstPart {
+		width: 50vw;
+	}
+
+	.secondPart {
+		width: 50vw;
+	}
+
+
+
+
+	#datatable_thead {
+		display: none;
+	}
+
+	#shtable_thead {
+		display: none;
+	}
+
+	.sp_details td {
+		display: block;
+		border: 1px solid #E1E1E1;
+	}
+
+	.sr_reschedule_btn,
+	.sr_cancel_btn {
+		margin: 5px auto;
+	}
+
+	.sorting_1 {
+		background-color: #F9F9F9 !important;
+	}
+
+	#dataTable {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 30px;
+	}
+
+	#shTable {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 30px;
+	}
+
+		#shTable tbody td.sorting_1 {
+			background-color: #F9F9F9 !important;
+		}
+
+		#shTable tbody td {
+			background-color: white !important;
+		}
+
+	.sp_details {
+		padding-bottom: 100px;
+	}
+
+
+	.table-bottom {
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+	}
+
+	.table-bottom-inner {
+		width: 420px !important;
+		margin: 5px 10px !important;
+		justify-content: center !important;
+	}
+
+	
+
+	.dataTables_info {
+		padding: 7px 0 0 20px !important;
+	}
+
+	.dataTables_paginate {
+		width: 420px !important;
+	}
+}
+
+
+@media (max-width: 731px) {
+	#myDetails .personal_info .col-md-4 {
+		width: 50%;
+	}
+
+	#myDetails .phone_num .col-md-4 {
+		width: 50%;
+		margin-bottom: 10px;
+	}
+}
 
 @media (max-width: 768px) {
 
@@ -2644,11 +3611,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	.sp_detail .col-md-7{
 		width: auto;
 	}
-	.sp_detail #export_end{
-		margin-left: auto;
-	}
+		.sp_detail #export_end {
+			margin: 10px auto;
+		}
 	.sp_detail .sh_title{
 		margin-left: 30px;
+		margin-top:10px;
 	}
 	.sh_cap_border{
 		display: none;
@@ -2717,6 +3685,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	.sr_last_row .col-md-4{
 		text-align: center;
 	}
+
+	.addresses_content .address_data .interact_address {
+		margin-right: 10px !important;
+	}
+
+	.addresses_header .col-sm-2 {
+		margin-right: 20px;
+	}
 }
 
 @media screen and (max-width: 970px){
@@ -2742,6 +3718,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	}
 }
 @media (max-width: 816px){
+
+	.address_data p {
+		font-size: 16px!important;
+	}
+
 	.sp_detail p{
 		font-size: 12px;
 		font-weight: 700;
@@ -2962,12 +3943,123 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	}
 
 }
+
+@media (max-width: 992px) {
+
+	#serHistoryNav {
+		display: none;
+	}
+
+	.smNavMenu {
+		position: fixed;
+		min-height: 100vh;
+		width: 100vw;
+		top: 0;
+		left: 100vw;
+		transition: left 0.4s;
+	}
+
+		.smNavMenu.open {
+			left: 0;
+		}
+
+	.uName {
+		padding: 8px 16px;
+	}
+
+	.firstPart {
+		background: rgba(0, 0, 0, 0);
+		width: 70vw;
+		height: 100vh;
+		transition: background 0.35s;
+	}
+
+	.smNavMenu.open .firstPart {
+		background: rgba(0, 0, 0, 0.45);
+	}
+
+	.secondPart {
+		width: 30vw;
+		font-size: 17px;
+		color: #646464;
+		background-color: #fff;
+		font-size: 14px;
+	}
+
+	.navItem {
+		padding: 8px 16px;
+	}
+
+		.navItem a {
+			text-decoration: none;
+			color: #646464;
+			cursor: pointer;
+		}
+
+			.navItem a:hover {
+				color: #646464;
+			}
+
+	.dashNavSide a {
+		color: #646464;
+		text-decoration: none;
+		padding: 8px 16px;
+		cursor: pointer;
+	}
+
+		.dashNavSide a.active {
+			color: #1D7A8C;
+		}
+
+		.dashNavSide a:hover {
+			color: #2c94a8;
+		}
+
+	.smNavSeparator {
+		background: #3b3b3b;
+		margin: 5px 0;
+	}
+
+	.socialIcon {
+		color: #111111;
+		margin: 20px !important;
+	}
+
+
+
+	.mySetting_header {
+		flex-direction: row !important;
+	}
+
+		.mySetting_header .col-lg-3 {
+			width: auto;
+			margin: 0 auto 0 auto;
+		}
+
+	.addresses_content .address_data .interact_address {
+		margin-right: 20px !important;
+	}
+
+	#myChangepass .changepass_content {
+		margin: 0 auto;
+	}
+
+		#myChangepass .changepass_content .col-lg-4 {
+			width: 400px;
+		}
+}
+
 @media screen and (min-width: 992px) {
 	.pro-pane-left {
 		text-align: end;
 	}
 	.pro-pane-right {
 		text-align: start;
+	}
+}
+@media screen and (min-width: 993px) {
+	#smSerHistoryNav {
+		display: none;
 	}
 }
 
@@ -2994,6 +4086,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	}
 	.sp_menu .nav{
 		flex-direction: row!important;
+		justify-content:center;
 	}
 	.sp_menu_details{
 		width: auto;
@@ -3050,6 +4143,44 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 		}
 		.service_req_detail .user_mng_search_form div div div{
 			width: 100%;
+		}
+
+	.mySetting_header {
+		justify-content: center;
+	}
+
+	#myDetails {
+		margin: 5px 30px;
+	}
+
+		#myDetails .select_lang,
+		#myDetails .save_btn {
+			justify-content: center;
+		}
+
+	#myAddresses {
+		margin: 0px 30px;
+	}
+
+		#myAddresses .addresses_content {
+			justify-content: center;
+		}
+
+	.addresses_content .address_data .interact_address {
+		margin-right: 30px;
+	}
+
+		.addresses_content .address_data .interact_address .col-sm-6 {
+			margin-left: 5px;
+			width: auto;
+		}
+
+	#myChangepass .changepass_content {
+		justify-content: center;
+	}
+
+		#myChangepass .changepass_content .save_btn {
+			justify-content: center;
 		}
 	
 }

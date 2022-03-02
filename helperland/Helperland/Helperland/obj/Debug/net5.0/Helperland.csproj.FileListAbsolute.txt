@@ -154,3 +154,5 @@ F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debu
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\welcome.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\ForgotPass.cshtml.g.cs
 F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\book_service.cshtml.g.cs
+F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Home\MySetting.cshtml.g.cs
+F:\Tatvasoft_training\training_project\helperland\Helperland\Helperland\obj\Debug\net5.0\Razor\Views\Shared\CustomerPageLayout.cshtml.g.cs
