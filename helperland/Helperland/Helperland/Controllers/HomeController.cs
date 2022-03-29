@@ -371,7 +371,7 @@ namespace Helperland.Controllers
                     if (check_zip.FirstOrDefault() != null)
                     {
                         address_fetch_cnt = getAddress();
-                        HttpContext.Session.SetString("zipcode", "nozip");
+                        
                         HttpContext.Session.SetInt32("address_fetch_cnt", address_fetch_cnt);
                         return View(userAddresses);
                     }
@@ -716,21 +716,92 @@ namespace Helperland.Controllers
             return View(spMySettingViewModel);
         }
 
-        
-        public JsonResult GetEvents()
+
+        [HttpGet]
+        public IActionResult GetServiceReqCalendar()
         {
-            var uid = Int32.Parse(HttpContext.Session.GetString("UserId"));
-            var events = _helperlandContext.ServiceRequests.Where(x => x.Status == 1 && x.ServiceProviderId == uid).ToList();
-            if (events.FirstOrDefault() != null)
+            int? Uid = Int32.Parse(HttpContext.Session.GetString("UserId"));
+
+            if (Uid != null)
             {
-                return Json(events);
+                List<SPServiceSchedule> data = new List<SPServiceSchedule>();
+                var req = _helperlandContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == 1).ToList();
+                
+                foreach (var item in req)
+                {
+                    var req_add = _helperlandContext.ServiceRequestAddresses.Where(x => x.ServiceRequestId == item.ServiceRequestId).FirstOrDefault();
+                    int duration_hr = 0;
+                    int duration_min = 0;
+                    DateTime end_time = item.ServiceStartDate;
+                    double duration = Convert.ToDouble(item.ServiceHours+item.ExtraHours);
+                    string dura_str = duration.ToString();
+                    bool dura_is_decimal = dura_str.Contains(".");
+                    string[] dura_arr = dura_str.Split(".");
+                    if (dura_is_decimal)
+                    {
+                        duration_hr = Int32.Parse(dura_arr[0]);
+
+
+
+                        if (Int32.Parse(dura_arr[1]) != 0)
+                        {
+                            duration_min = 30;
+                        }
+                        else
+                        {
+                            duration_min = 0;
+                        }
+                    }
+                    else
+                    {
+                        duration_hr = Int32.Parse(dura_str);
+                        duration_min = 0;
+
+                    }
+
+
+                    TimeSpan end_time_cal = new TimeSpan(duration_hr, duration_min, 0);
+
+                    end_time = end_time + end_time_cal;
+
+
+                    string end_str = end_time.ToString();
+                    string end = end_str.Substring(10, 6);
+
+                    string date_str = item.ServiceStartDate.ToString();
+                    string date_day = date_str.Substring(0, 2);
+                    string date_mon = date_str.Substring(3, 2);
+                    string date_y = date_str.Substring(6, 4);
+                    string start = date_str.Substring(10, 6);
+
+                    string address = req_add.AddressLine1 + " \n" + req_add.City + " , " + req_add.PostalCode;
+
+                    SPServiceSchedule res = new SPServiceSchedule();
+                    res.Id = item.ServiceRequestId;
+                    res.Title = start + " - " + end;
+                    res.Start = date_y+"-"+date_mon+"-"+date_day;
+                    res.addressline1 = address;
+                    if (item.Status == 2)
+                    {
+                        res.Color = "#67b644";
+                    }
+                    else if (item.Status == 1)
+                    {
+                        res.Color = "#1D7A8C";
+                    }
+
+
+                    data.Add(res);
+                }
+
+                return new JsonResult(data);
             }
             else
             {
-                return Json("Not Found");
+                return Json("notfound");
             }
-            
         }
+
         [HttpPost]
         public IActionResult spMydetail(spMySettingViewModel spMySetting)
         {
@@ -858,7 +929,7 @@ namespace Helperland.Controllers
         {
             var ser = _helperlandContext.ServiceRequests.Where(x => x.ServiceId == spMySetting.hidden_complete_ser_id);
             var userid = Int32.Parse(HttpContext.Session.GetString("UserId"));
-            var check_blocked = _helperlandContext.FavoriteAndBlockeds.Where(x => x.UserId == userid).Where(x=>x.TargetUserId == spMySetting.customer_id);
+            var check_blocked = _helperlandContext.FavoriteAndBlockeds.Where(x => x.UserId == userid && x.TargetUserId == spMySetting.customer_id).FirstOrDefault();
             if(check_blocked == null)
             {
                 FavoriteAndBlocked favblock = new FavoriteAndBlocked()
